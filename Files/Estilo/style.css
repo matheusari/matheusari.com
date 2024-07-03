@@ -1,0 +1,788 @@
+/* Importando Fontes */
+@font-face {
+  font-family: "poppins-semibold";
+  src: url("Fontes/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-medium";
+  src: url("Fontes/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-light";
+  src: url("Fontes/Poppins/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-light-italic";
+  src: url("Fontes/Poppins/Poppins-LightItalic.ttf") format("truetype");
+}
+
+/* Scroll */
+html ::-webkit-scrollbar {
+  width: 10px;
+}
+html ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #b29d83;
+}
+html ::-webkit-scrollbar-track {
+  background: #e1d6c7;
+}
+
+/* Resetando as configurações da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cor de fundo da página */
+body {
+  background-color: #fff5ea;
+}
+
+/* Imagem de fundo */
+.background {
+  background-image: url("Background/Quadriculado-BG.png");
+  background-repeat: repeat;
+}
+
+/* Retângulo que a página está. Limitado em 1700px de largura */
+.container {
+  height: auto;
+  width: 100%;
+  max-width: 1700px;
+
+  /* Centralizando a página */
+  margin: 0 auto;
+}
+
+.logo-top {
+  /* Para inserir o logo por cima do banner */
+  position: absolute;
+
+  width: 5vw; /* Largura correspondente a 5% da largura da tela */
+  max-width: 36px;
+  min-width: 30px;
+  margin-left: 10vw;
+
+  animation: aparecer-logo-top 0.75s; /* Use a animação 'aparecer' por 1 segundo */
+}
+
+@keyframes aparecer-logo-top {
+  from {
+    margin-top: -140px;
+  } /* Começa com o item invisível (acima da margem) */
+  to {
+    margin-top: 0px;
+  } /* Termine com o item visível */
+}
+
+/* Banner Principal */
+/* Define as regras para telas menores que 450px de altura */
+@media screen and (max-height: 450px) {
+  .banner-principal {
+    /* Centraliza Horizontal */
+    margin: 0 auto;
+    text-align: center;
+
+    width: 100%;
+
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .banner-principal img {
+    max-width: 90%; /* Corresponde a 90% dos 100% de largura */
+    width: 360px;
+    height: auto;
+  }
+}
+
+/* Define as regras para telas maiores que 450px e menores que 1300px de altura */
+@media screen and (min-height: 451px) and (max-height: 1100px) {
+  .banner-principal {
+    /* Centraliza Horizontal */
+    margin: 0 auto;
+    text-align: center;
+
+    /* Centraliza vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+    max-width: 650px; /* Largura máxima, em px, que a imagem pode chegar */
+  }
+
+  .banner-principal img {
+    max-width: 90%; /* Corresponde a 90% dos 100% de largura */
+    height: auto; /* Se ajusta automaticamente a largura */
+
+    max-height: 80vh; /* Altura máxima, em relação ao tamanho da tela, que a imagem pode chegar */
+  }
+}
+
+/* Define as regras para telas maiores que 1300px de altura */
+@media screen and (min-height: 1101px) {
+  .banner-principal {
+    /* Centraliza Horizontal */
+    margin: 0 auto;
+    text-align: center;
+
+    width: 100%;
+
+    padding-top: 260px;
+    padding-bottom: 260px;
+  }
+
+  .banner-principal img {
+    max-width: 90%; /* Corresponde a 90% dos 100% de largura */
+    width: 585px;
+    height: auto;
+  }
+}
+
+.about-me {
+  /* Para texto e imagem alinharem em linha */
+  display: flex;
+  flex-direction: row;
+
+  /* Centralizando texto e imagem */
+  align-items: center;
+
+  width: 100%;
+
+  padding: 0 10vw; /* Margens à esquerda e direita */
+  gap: 50px;
+}
+
+/* Define as regras para telas maiores que 1700px de largura */
+@media screen and (min-width: 1700px) {
+  .logo-top {
+    margin-left: 170px;
+  }
+
+  .about-me {
+    padding: 0 170px; /* Margens à esquerda e direita */
+  }
+}
+
+.text-about-me {
+  width: 50%; /* O texto ficará nos 50% da largura da div */
+}
+
+/* "Muito prazer,"*/
+.title-about-me {
+  text-align: left;
+  font-family: "poppins-semibold";
+
+  font-size: 20px; /* Define o tamanho da fonte como 20px */
+  line-height: 1.5; /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+
+  color: #301500;
+}
+
+/* Corpo do texto */
+.body-about-me {
+  text-align: justify;
+  font-family: "poppins-light";
+
+  font-size: 14px; /* Define o tamanho da fonte como 14px */
+  line-height: 1.5; /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+
+  color: #301500;
+}
+
+/* "Palavras grifadas no corpo do texto"*/
+.body-about-me span {
+  font-family: "poppins-medium";
+}
+
+/* Polaroid */
+.image-about-me {
+  width: 50%; /* A imagem ficará nos 50% da largura da div */
+
+  /* Alinhando imagem ao centro dos 50% */
+  display: flex;
+  justify-content: center;
+}
+
+.image-about-me img {
+  width: 100%;
+  max-width: 400px; /* Largura máxima, em px, que a imagem pode chegar */
+}
+
+/* Define as regras para telas menores que 1050px */
+@media screen and (max-width: 1050px) {
+  .about-me {
+    /* Para texto e imagem alinharem em coluna */
+    flex-direction: column;
+
+    width: 100%; /* Largura = toda a tela */
+    gap: 25px;
+  }
+
+  .text-about-me {
+    width: 100%;
+  }
+
+  /* "Muito prazer,"*/
+  .title-about-me {
+    font-size: 18px; /* Define o tamanho da fonte como 20px */
+  }
+
+  .body-about-me {
+    font-size: 13.5px; /* Define o tamanho da fonte como 14px */
+  }
+
+  .image-about-me {
+    width: 100%; /* A imagem ficará nos 50% da largura da div */
+  }
+}
+
+.certifications {
+  width: 100%; /* O retângulo ficará nos 100% da largura da div */
+  height: auto; /* Altura automática */
+
+  /* Paddings */
+  padding: 25px 10vw 0px 10vw;
+}
+
+.rectangle-certifications {
+  border: solid 1px #301500;
+  border-radius: 30px;
+
+  height: auto; /* Altura se ajusta automaticamente */
+
+  padding: 30px 5vw 30px 5vw;
+}
+
+/* Define as regras para telas maiores que 1700px de largura */
+@media screen and (min-width: 1700px) {
+  .certifications {
+    /* Paddings */
+    padding: 25px 170px 0px 170px;
+  }
+
+  .rectangle-certifications {
+    padding: 30px 85px 30px 85px;
+  }
+}
+
+.title-certifications {
+  text-align: left;
+  font-family: "poppins-semibold";
+
+  font-size: 20px; /* Define o tamanho da fonte como 20px */
+  line-height: 1.5; /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+
+  color: #301500;
+
+  background-color: rgba(39, 19, 0, 0.1);
+  width: 140px;
+  height: 12px;
+}
+
+.columns-certifications {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-01-certifications {
+  width: 50%;
+  padding-right: 5vw;
+}
+
+.column-02-certifications {
+  width: 50%;
+}
+
+.certification-infos span {
+  text-align: left;
+  font-family: "poppins-semibold";
+
+  font-size: 18px; /* Define o tamanho da fonte como 18px */
+  line-height: 1.5; /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+
+  color: #301500;
+}
+
+.certification-infos p {
+  text-align: left;
+  font-family: "poppins-light";
+
+  font-size: 14px; /* Define o tamanho da fonte como 14px */
+  line-height: 1.5; /* Define a altura da linha como 1.5 vezes o tamanho da fonte */
+
+  color: #301500;
+}
+
+/* Define as regras para telas menores que 1050px */
+@media screen and (max-width: 1050px) {
+  .title-certifications {
+    font-size: 18px; /* Define o tamanho da fonte como 20px */
+    width: 125px;
+    height: 12px;
+  }
+
+  .certification-infos span {
+    font-size: 16px; /* Define o tamanho da fonte como 18px */
+  }
+
+  .certification-infos p {
+    font-size: 13.5px; /* Define o tamanho da fonte como 14px */
+  }
+}
+
+/* Define as regras para telas menores que 700px */
+@media screen and (max-width: 700px) {
+  .columns-certifications {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column-01-certifications {
+    width: 100%;
+  }
+
+  .column-02-certifications {
+    width: 100%;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  padding: 25px 10vw 25px 10vw;
+  gap: 25px;
+}
+
+.rectangle-skills {
+  width: 50%;
+  padding: 30px 5vw 0px 5vw;
+  background-color: #301500;
+  border-radius: 30px;
+}
+
+/* Define as regras para telas maiores que 1700px de largura */
+@media screen and (min-width: 1700px) {
+  .skills {
+    padding: 25px 170px 25px 170px;
+  }
+
+  .rectangle-skills {
+    padding: 30px 85px 0px 85px;
+  }
+}
+
+/* Define as regras para telas menores que 700px */
+@media screen and (max-width: 750px) {
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rectangle-skills {
+    width: 100%;
+  }
+}
+
+.title-hard-skills {
+  font-family: "poppins-semibold";
+  font-size: 18px; /* Define o tamanho da fonte como 20px */
+  color: #fff5ea;
+
+  background-color: #524432;
+  width: 201px;
+  height: 12px;
+}
+
+.title-soft-skills {
+  font-family: "poppins-semibold";
+  font-size: 18px; /* Define o tamanho da fonte como 20px */
+  color: #fff5ea;
+
+  background-color: #524432;
+  width: 235px;
+  height: 12px;
+}
+
+.rectangle-skills .skill-box {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.skill-box .title {
+  font-family: "poppins-semibold";
+  font-size: 14px;
+  color: #fff5ea;
+}
+
+/* Define as regras para telas menores que 1050px */
+@media screen and (max-width: 1050px) {
+  .title-hard-skills {
+    font-size: 16px;
+    width: 179px;
+  }
+
+  .title-soft-skills {
+    font-size: 16px;
+    width: 209px;
+  }
+
+  .skill-box .title {
+    font-size: 13px;
+  }
+}
+
+.skill-box .skill-bar {
+  background-color: #524432;
+  height: 6px;
+  width: 100%;
+
+  border-radius: 10px;
+  margin-top: 5px;
+}
+.skill-bar .skill-per {
+  position: relative;
+  display: block;
+
+  height: 100%;
+  width: 90%;
+  background: #fff5ea;
+  border-radius: 10px;
+
+  animation: progress 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skill-per .tooltip {
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  background: #fff5ea;
+
+  font-family: "poppins-semibold";
+  font-size: 10px;
+  font-weight: 500;
+  color: #301500;
+
+  padding: 2px 6px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  background-color: #fff5ea;
+
+  z-index: -1;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.skill-per.html-css {
+  width: 85%;
+  animation-delay: 0.1s;
+}
+.skill-per.javascript {
+  width: 65%;
+  animation-delay: 0.2s;
+}
+.skill-per.python {
+  width: 65%;
+  animation-delay: 0.3s;
+}
+.skill-per.java {
+  width: 60%;
+  animation-delay: 0.3s;
+}
+.skill-per.sql {
+  width: 65%;
+  animation-delay: 0.3s;
+}
+.skill-per.photoshop {
+  width: 85%;
+  animation-delay: 0.3s;
+}
+.skill-per.illustrator {
+  width: 85%;
+  animation-delay: 0.3s;
+}
+.skill-per.figma {
+  width: 70%;
+  animation-delay: 0.3s;
+}
+.skill-per.office {
+  width: 75%;
+  animation-delay: 0.3s;
+}
+.skill-per.comunicacao {
+  width: 85%;
+  animation-delay: 0.3s;
+}
+.skill-per.equipe {
+  width: 75%;
+  animation-delay: 0.3s;
+}
+.skill-per.adaptabilidade {
+  width: 80%;
+  animation-delay: 0.3s;
+}
+.skill-per.organizacao {
+  width: 75%;
+  animation-delay: 0.3s;
+}
+.skill-per.gestao-de-tempo {
+  width: 75%;
+  animation-delay: 0.3s;
+}
+.skill-per.lideranca {
+  width: 70%;
+  animation-delay: 0.3s;
+}
+.skill-per.dedicacao {
+  width: 99%;
+  animation-delay: 0.3s;
+}
+.skill-per.inovacao {
+  width: 99%;
+  animation-delay: 0.3s;
+}
+.skill-per.criatividade {
+  width: 99%;
+  animation-delay: 0.3s;
+}
+
+.projects {
+  margin: 0 10vw; /* Define o padding em unidades de viewport width */
+}
+
+/* Define as regras para telas maiores que 1700px de largura */
+@media screen and (min-width: 1700px) {
+  .projects {
+    /* Paddings */
+    margin: 0 170px; /* Define o padding em pixels para telas maiores */
+  }
+}
+
+.title-projects {
+  text-align: left;
+  font-family: "poppins-semibold";
+
+  font-size: 20px; /* Define o tamanho da fonte como 20px */
+
+  color: #301500;
+
+  background-color: rgba(39, 19, 0, 0.1);
+  width: 210px;
+  height: 12px;
+}
+
+.subtitle-projects {
+  text-align: left;
+  font-family: "poppins-light-italic";
+  font-size: 14px;
+  color: #301500;
+
+  margin-top: 15px;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+@media screen and (max-width: 1050px) {
+  .title-projects {
+    font-size: 18px;
+    width: 189px;
+    height: 12px;
+  }
+
+  .subtitle-projects {
+    font-size: 13px;
+  }
+}
+
+.overlay-button {
+  /* Posicionado o botão no centro */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 10; /* Garante que o botão esteja acima das imagens */
+
+  border: solid 1.5px #301500;
+  backdrop-filter: blur(5px);
+  color: #301500;
+  font-family: "poppins-light";
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 50px;
+  cursor: pointer;
+
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.3s ease; /* Transição suave */
+
+  height: 50px;
+  width: 50px;
+}
+
+.overlay-button:hover {
+  border: solid 1.5px #301500;
+  background-color: #301500;
+  color: #fff5ea;
+
+  transition: 0.3s ease; /* Transição suave */
+}
+
+.overlay-button p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.swiper-slide:hover .overlay-button {
+  opacity: 1; /* Mostra o botão quando o mouse passa por cima da imagem */
+}
+
+.swiper-slide {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+
+  width: 80vw; /* Define a largura em viewport width */
+  max-width: 300px; /* Define a largura máxima em pixels */
+
+  height: 100%;
+
+  margin: 0 12.5px; /* Define a margem em viewport width */
+
+  background-color: transparent;
+  border-radius: 30px;
+}
+
+.swiper-slide img {
+  width: 100%; /* Define a largura da imagem como 100% do contêiner */
+  height: auto;
+  max-width: 100%; /* Limita a largura máxima para evitar distorções */
+  max-height: 420px; /* Limita a altura máxima */
+  object-fit: cover; /* Mantém a proporção e corta o excesso */
+  border-radius: 30px;
+  padding: 6px;
+  transition: opacity 0.3s ease; /* Transição suave */
+
+  border: 1px solid #301500;
+}
+
+.swiper-slide:hover {
+  background-color: #fff5ea;
+}
+
+.swiper-slide:hover img {
+  opacity: 0.6; /* Reduz a opacidade da imagem ao passar o mouse */
+}
+
+/* Define a cor preta para a bolinha do slide ativo */
+.swiper-pagination-bullet-active {
+  background-color: #301500;
+}
+
+.illustration-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 25px 10vw 0 10vw;
+}
+
+.illustration-footer img {
+  width: 60vw;
+  max-width: 300px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 60px;
+  padding: 0 10vw 0 10vw;
+}
+
+/* Define as regras para telas maiores que 1700px de largura */
+@media screen and (min-width: 1700px) {
+  .illustration-footer {
+    padding: 25px 170px 0 170px;
+  }
+
+  .footer {
+    /* Paddings */
+    padding: 0 170px 0 170px;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 50vw;
+  height: 60px;
+  max-width: 300px;
+
+  gap: 8px;
+}
+
+.socials a {
+  width: auto;
+  height: 28px;
+}
+
+.socials a img {
+  width: 100%;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.socials a img:hover {
+  transform: scale(1.13);
+}
+
+.scroll-reveal-01,
+.scroll-reveal-02 {
+  visibility: hidden; /* Inicialmente, todos os elementos com essas classes estão ocultos */
+}
+
+.scroll-reveal-01.revealed,
+.scroll-reveal-02.revealed {
+  visibility: visible !important; /* Depois de serem revelados, esses elementos permanecem visíveis */
+}
